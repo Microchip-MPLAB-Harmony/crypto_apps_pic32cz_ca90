@@ -1,0 +1,14 @@
+configName: default
+folderName: Riverside_HSM_Demo_M7
+format_version: v1.0
+frameworkPath: ../../..
+processor: PIC32CZ8110CA90208
+projectName: Riverside_HSM_Demo_M7
+settings:
+  PackageFilter: audio;audio_apps;bsp;core;core_apps_cec173x;core_apps_pic32ck_sg_gc;core_apps_pic32cm_jh00_jh01;core_apps_pic32cm_le_ls;core_apps_pic32cm_mc00;core_apps_pic32cx_mt;core_apps_pic32cz_ca;core_apps_pic32mk;core_apps_pic32mm;core_apps_pic32mx;core_apps_pic32mz_da;core_apps_pic32mz_ef;core_apps_pic32mz_w1;core_apps_sam_9x60;core_apps_sam_9x7;core_apps_sam_a5d2;core_apps_sam_a7g5;core_apps_sam_c20_c21;core_apps_sam_d20;core_apps_sam_d21_da1;core_apps_sam_d5x_e5x;core_apps_sam_e70_s70_v70_v71;core_apps_sam_g55;core_apps_sam_ha1;core_apps_sam_l10_l11;core_apps_sam_l21;core_apps_sam_l22;core_apps_sam_rh71;crypto;cryptoauthlibSPG;csp;Devices;dev_packs;gfx_apps_sam_e70_s70_v70_v71;h3_token_manager;harmony-services;hsm;hsmharmony;quick_docs;tflite-micro-apps;tflm;usb;usb_apps_device;usb_apps_dual_role;usb_apps_host;usb_apps_multi_controller
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'false'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.8.0
+  MERGE_STRATEGY: ALL
+  DFPPath: .\dev_packs\Microchip\PIC32CZ-CA90_DFP\1.0.18\CA90\atdf\PIC32CZ8110CA90208.atdf

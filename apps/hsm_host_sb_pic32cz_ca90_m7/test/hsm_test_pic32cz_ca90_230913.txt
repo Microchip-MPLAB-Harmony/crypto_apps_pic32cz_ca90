@@ -1,0 +1,238 @@
+Application created Sep 13 2023 10:09:27 initialized!
+BOOT from FLASH)
+HSM TEST SUITE Commands
+HSM Enabled
+Initial HSM Status: 0x00001310
+    NOT busy  ECODE: UNDETERM
+    SBS: DISABLED  LCS: NOT_SECURED  PS: BOOT
+
+HSM FLASH BOOT: Waiting for HSM FIRMWARE to be ready
+HSM Firmware Metadata:  0x00000110 00050000 00000001 0c7e0000...
+         HSM Firmware:  0x1001fff0 100135f5 10019061 10019063...
+HSM Load Firmware
+HSM Pass: MB Header Match OK:
+HSM Pass: CMD Header Match OK:
+HSM Pass: RC OK(Command was successful):
+HSM Pass: Reg. STATUS OK:
+--Waiting for HSM to become OPERATIONAL
+...
+HSM Status: 0x00001320
+    NOT busy  ECODE: UNDETERM
+    SBS: DISABLED  LCS: NOT_SECURED  PS: OPERATIONAL:
+
+---------------------------------------------------------
+HSM (CMD_BOOT_SELF_TEST)...
+HSM Pass: MB Header Match OK:
+HSM Pass: CMD Header Match OK:
+HSM Pass: RC OK(Command was successful):
+HSM Pass: Reg. STATUS OK:
+BOOT SHA256:
+    SG ADDR: 0x20022a78 (32 bytes)
+    0x6a09e667 0xbb67ae85 0x3c6ef372 0xa54ff53a 
+    0x510e527f 0x9b05688c 0x1f83d9ab 0x5be0cd19 
+HSM ROM Test: CMD_BOOT_SELF_TEST Successful.
+
+Running HSM MB Command Test Suite
+PreTEST HSM Status: 0x00001320
+    NOT busy  ECODE: UNDETERM
+    SBS: DISABLED  LCS: OPEN  PS: OPERATIONAL:
+
+
+---------------------------------------------
+**HSM HASH BLOCK SHA256 TEST**
+SHA256:  Msg of 11 Bytes:
+b"/0x61/62/63/64/65/66/67/68/69/6a/6b/
+HSM: Sending CMD_HASH_BLOCK command
+HSM Pass: MB Header Match OK:
+HSM Pass: CMD Header Match OK:
+HSM Pass: RC OK(Command was successful):
+HSM Pass: Reg. STATUS OK:
+SHA256 Pass: CMD_VSM_INPUT_DATA terminated properly.
+  SHA256:  (32 Bytes)
+b"/0xca/2f/20/69/ea/0c/6e/46/58/22/2e/06/f8/dd/63/96/59/cb/b5/e6/7c/bb/ba/67/34/bc/33/4a/37/99/bc/68/
+SHA256 Pass: CMD_HASH_BLOCK DATA OUT VALID
+HSM: CMD_HASH_BLOCK SHA256 Complete
+
+---------------------------------------------
+**CMD_VSM_INPUT_DATA TEST (Slot 15 KeyLength 256 (32 bytes)**
+HSM Pass: MB Header Match OK:
+HSM Pass: CMD Header Match OK:
+HSM Pass: RC OK(Command was successful):
+HSM Pass: Reg. STATUS OK:
+VSM Pass: CMD_VSM_INPUT_DATA terminated properly.
+
+CMD_VSM_GET_SLOT_INFO (VSS 15)
+VSS Slot# 15 - slotSize 32 bytes
+VS #15 Info:
+
+VS Header (0x00000f00) Slot #15 
+--    VS Slot Index  0
+--        Type: VSS_RAW
+--Storage Type: VM_STORAGE
+--E=0 V=0 H=0 APL=0
+
+  VSS Before: 0x00000000
+  VSS  After: 0xffffffff
+  VSS   Meta: 0x00000020
+VSM PASSED: Slot# 48 Written with 15 bytes
+HSM TEST: MD_VSM_INPUT_DATA Slot 15 Complete - PASSED
+VSInfo:  Slot 15 32 Bytes (8 Words)
+
+---------------------------------------------
+**TEST HSM CMD_VSM_OUTPUT_DATA - SLOT 15 Exp KeyLength 256 (12 words)**
+****HSM Cmd Response Checks****
+HSM Pass: MB Header Match OK:
+HSM Pass: CMD Header Match OK:
+HSM Pass: RC OK(Command was successful):
+HSM Pass: Reg. STATUS OK:
+DMA slot size (48 bytes)
+VSM Pass: CMD_VSM_OUTPUT_DATA terminated properly.
+VSM Pass:  Slot #15 Output Data (12 Words) OK
+
+...Checking Data (12 Words
+)VS 15 HeaderVS Header (0x00000f00) Slot #15 
+--    VS Slot Index  0
+--        Type: ERASED
+--Storage Type: VM_STORAGE
+--E=0 V=0 H=0 APL=0
+
+
+Actual: VSM Output Data(12 Words):
+0000: 00000f00  00000000  ffffffff  00000020 
+0004: 11111111  22222222  33333333  44444444 
+0008: 55555555  66666666  77777777  88888888 
+VSM Pass: CMD_VSM_OUTPUT_DATA DATA OUT MATCH
+HSM TEST: CMD_VSM_OUTPUT_DATA Slot 15 Complete - PASSED
+
+---------------------------------------------
+**TEST HSM VSM DELETE SLOT DATA - Slot 15**
+--SLOT #15 NOT EMPTY!!!
+HSM: Sending CMD_VSM_DELETE_SLOT Command (VSS 15)
+--CMD INP[2]: 0x0f000f00
+--CMD INP[2]: 0x0f000f00
+HSM: RC 0x00000001 Command was successful
+HSM Pass: MB Header Match OK:
+HSM Pass: CMD Header Match OK:
+HSM Pass: RC OK(Command was successful):
+HSM Pass: Reg. STATUS OK:
+HSM Cmd: CMD_VSM_DELETE_SLOT_INST terminated properly.
+CHECK SLOT 15 Empty STATUS:
+--HSM PASS: Slot #15 EMPTY after delete
+HSM TEST: CMD_VSM_DELETE_SLOT Slot 15 Complete - PASSED
+
+---------------------------------------------
+**CMD_VSM_INPUT_DATA TEST (Slot 15 KeyLength 512 (64 bytes)**
+HSM Pass: MB Header Match OK:
+HSM Pass: CMD Header Match OK:
+HSM Pass: RC OK(Command was successful):
+HSM Pass: Reg. STATUS OK:
+VSM Pass: CMD_VSM_INPUT_DATA terminated properly.
+
+CMD_VSM_GET_SLOT_INFO (VSS 15)
+VSS Slot# 15 - slotSize 80 bytes
+VS #15 Info:
+
+VS Header (0x00000f00) Slot #15 
+--    VS Slot Index  0
+--        Type: VSS_RAW
+--Storage Type: VM_STORAGE
+--E=0 V=0 H=0 APL=0
+
+  VSS Before: 0x00000000
+  VSS  After: 0xffffffff
+  VSS   Meta: 0x00000050
+VSM PASSED: Slot# 80 Written with 15 bytes
+HSM TEST: MD_VSM_INPUT_DATA Slot 15 Complete - PASSED
+VSInfo:  Slot 15 80 Bytes (20 Words)
+
+---------------------------------------------
+**TEST HSM CMD_VSM_OUTPUT_DATA - SLOT 15 Exp KeyLength 512 (20 words)**
+****HSM Cmd Response Checks****
+HSM Pass: MB Header Match OK:
+HSM Pass: CMD Header Match OK:
+HSM Pass: RC OK(Command was successful):
+HSM Pass: Reg. STATUS OK:
+DMA slot size (80 bytes)
+VSM Pass: CMD_VSM_OUTPUT_DATA terminated properly.
+VSM Pass:  Slot #15 Output Data (20 Words) OK
+
+...Checking Data (20 Words
+)VS 15 HeaderVS Header (0x00000f00) Slot #15 
+--    VS Slot Index  0
+--        Type: ERASED
+--Storage Type: VM_STORAGE
+--E=0 V=0 H=0 APL=0
+
+
+Actual: VSM Output Data(20 Words):
+0000: 00000f00  00000000  ffffffff  00000050 
+0004: 11111111  22222222  33333333  44444444 
+0008: 55555555  66666666  77777777  88888888 
+000c: 99999999  aaaaaaaa  bbbbbbbb  cccccccc 
+0010: dddddddd  eeeeeeee  ffffffff  abcdefab 
+VSM Pass: CMD_VSM_OUTPUT_DATA DATA OUT MATCH
+HSM TEST: CMD_VSM_OUTPUT_DATA Slot 15 Complete - PASSED
+
+---------------------------------------------
+**TEST HSM VSM DELETE SLOT DATA - Slot 15**
+--SLOT #15 NOT EMPTY!!!
+HSM: Sending CMD_VSM_DELETE_SLOT Command (VSS 15)
+--CMD INP[2]: 0x0f000f00
+--CMD INP[2]: 0x0f000f00
+HSM: RC 0x00000001 Command was successful
+HSM Pass: MB Header Match OK:
+HSM Pass: CMD Header Match OK:
+HSM Pass: RC OK(Command was successful):
+HSM Pass: Reg. STATUS OK:
+HSM Cmd: CMD_VSM_DELETE_SLOT_INST terminated properly.
+CHECK SLOT 15 Empty STATUS:
+--HSM PASS: Slot #15 EMPTY after delete
+HSM TEST: CMD_VSM_DELETE_SLOT Slot 15 Complete - PASSED
+VSS AES ECB Test- Using Streaming Key (-1)
+
+---------------------------------------------
+
+**HSM AES256 ECB Encryption/Decryption TEST (Slot -1)**
+Key (16 Bytes):
+b"/0x61/62/63/64/65/66/67/68/69/6a/6b/6c/6d/6e/6f/70/
+Msg (32 Bytes): 
+TechTutorialsX!!TechTutorialsX!!
+b"/0x54/65/63/68/54/75/74/6f/72/69/61/6c/73/58/21/21/54/65/63/68/54/75/74/6f/72/69/61/6c/73/58/21/21/
+HSM: Sending CMD_AES_ENCRYPT command (msg L=8 words
+HSM Pass: MB Header Match OK:
+HSM Pass: CMD Header Match OK:
+HSM Pass: RC OK(Command was successful):
+HSM Pass: Reg. STATUS OK:
+AES256 Pass: CMD_VSM_INPUT_DATA terminated properly.
+AES256:  Encrypted MSG (8 Words)
+b"/0x11/d0/4b/87/76/94/92/04/df/bf/7f/5a/3c/7b/1c/40/11/d0/4b/87/76/94/92/04/df/bf/7f/5a/3c/7b/1c/40/
+AES 256 FAIL: !!!CMD_AES Encryption ERROR !!!
+Expected: Encrypted MSG (8 Words)
+b"/0x17/5a/a7/ea/1d/ec/81/b6/8d/6f/1c/d3/03/16/e7/e6/17/5a/a7/ea/1d/ec/81/b6/8d/6f/1c/d3/03/16/e7/e6/
+HSM: CMD_AES_256 Encrypt/Decrypt Complete
+
+---------------------------------------------
+
+**HSM AES128 ECB Encryption/Decryption TEST G1 T2 (Slot -1)**
+Key (16 Bytes):
+b"/0x00/00/00/00/00/00/00/00/00/00/00/00/00/00/00/00/
+Msg (16 Bytes): 
+b"/0xf3/44/81/ec/3c/c6/27/ba/cd/5d/c3/fb/08/f2/73/e6/
+HSM: Sending CMD_AES_ENCRYPT (G1T2) command (msgLength=4 words
+HSM Pass: MB Header Match OK:
+HSM Pass: CMD Header Match OK:
+HSM Pass: RC OK(Command was successful):
+HSM Pass: Reg. STATUS OK:
+AESG1T2 Pass: CMD_VSM_INPUT_DATA terminated properly.
+AESG1T2:  Encrypted MSG (4 Words)
+b"/0x67/9f/80/20/e5/db/96/e4/78/c6/e5/23/9d/db/d9/09/
+AES G1T2 FAIL: !!!CMD_AES Encryption ERROR !!!
+Expected: Encrypted MSG (4 Words)
+b"/0x03/36/76/3e/96/6d/92/59/5a/56/7c/c9/ce/53/7f/5e/
+HSM: CMD_AES_Encrypt G1T2 Complete
+
+PostTEST HSM Status: 0x00001320
+    NOT busy  ECODE: UNDETERM
+    SBS: DISABLED  LCS: NOT_SECURED  PS: OPERATIONAL:
+
+**** COMPLETED HSM MB TEST Suite ****
