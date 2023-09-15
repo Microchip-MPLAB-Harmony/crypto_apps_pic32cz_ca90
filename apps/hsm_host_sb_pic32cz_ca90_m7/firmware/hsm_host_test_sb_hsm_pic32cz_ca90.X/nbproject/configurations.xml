@@ -805,7 +805,7 @@
         <property key="memories.programmemory.ranges" value="0-9fffffff"/>
         <property key="poweroptions.powerenable" value="false"/>
         <property key="programmerToGoFilePath"
-                  value="C:/Microchip/harmony/h3_v400S/CryptoApps/crypto_apps_pic32cz_ca90/apps/hsm_host_sb_pic32cz_ca90_m7/firmware/hsm_host_test_sb_hsm_pic32cz_ca90.X/debug/default/hsm_host_test_sb_hsm_pic32cz_ca90_ptg"/>
+                  value="C:/Microchip/harmony/h3_v360S/hsmApps/riverside-m7-development_bridge/hsm_pic32cz_ca90_m7/firmware/hsm_m7_pic32cz_ca90_uart.X/debug/default/hsm_m7_pic32cz_ca90_uart_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.ledbrightness" value="5"/>
