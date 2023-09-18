@@ -9,8 +9,7 @@ PIC32CZ\_CAxx Curiosity Ultra (Rev3) board.
 This chip has two cores:
 
    1. M7 Host Core
-   2. M0+ Hardware Security Module (HSM) core with a Silex
-   Cryptography module.
+   2. M0+ Hardware Security Module (HSM)
 
 This project works in conjunction with a separate HSM project 
 (hsm\_fimware\_flash\_boot/host\_test/host\_firmware\_boot.X) 
