@@ -14,11 +14,11 @@
 
 The current known issues are as follows:
  - AES Host Command gives invalid results
-
+ - MCC will not generate for the BSP Repositor Version >5.
 
 ### Development Tools
 
-* [MPLAB® X IDE v6.10](https://www.microchip.com/mplab/mplab-x-ide)
+* [MPLAB® X IDE v6.15](https://www.microchip.com/mplab/mplab-x-ide)
 * [MPLAB® XC32 C/C++ Compiler v4.30](https://www.microchip.com/mplab/compilers)
 * MPLAB® X IDE plug-ins:
     * MPLAB® Harmony Configurator (MHC) v5.5.7 and above.

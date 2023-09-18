@@ -13,33 +13,49 @@ This chip has two cores:
 
 This project works in conjunction with a separate HSM project 
 (hsm\_fimware\_flash\_boot/host\_test/host\_firmware\_boot.X) 
-that loads the M0+ HSM firmware to host flash.  This allow
+that loads the M0+ HSM firmware to host flash.  This allows
 the host to boot the HSM at runtime by loading the HSM firmware
 from flash through the Host/HSM Mailbox (MB) interface.
 
-Alsok The host sends commands
+The host sends commands
 to the M0+ through the HSM MB registers, which are
 shared between the two cores.  Command results/status are
 returns through the MB registers and via DMA transfers
 to/from the HSM module.
 
-Note that KIT protocol HID connection is supported, but not
-impleneted, for receiving Kit Commands over HID
-This is not yet operational, since the TPDS KIT Command Driver is 
-not yet implemented for HSM devices or command structure.
+HSM Mailbox API
+-----------------
+A few of the HSM Mailbox commands have been abstracted as
+a mailbox command library.  The code structure is given below:
+
+![PIC32CA CAxx Curiosity Board Setup for HSM Demo](assets/hsm_host_mb_api.png)
+
+The following commands have been partially implemented:
+
+* Hashing Algorithm:  SHA256 with non-secure key
+* Variable Slot Management:  All non-secure key slot management functions
+* Symmetric Algorithm: AES-ECB
+
+Harmony Framework
+------------------
+
+            bsp: 0007f2e166 TAG: v3.14.0
+           core: 010b9a6732 TAG: v3.13.1
+            csp: a5c68d9485 TAG: v3.18.0
+      dev_packs: 0b697e42d6 TAG: v3.18.0
+            mhc: 000f5b16bb TAG: v3.8.5
 
 Hardware Setup
 ------------------
-Two USB ports are used, which both must be connected:    
+One USB ports is used, i.e. the PKOB4 Debug Com Port over 
+Debug USB Connector 
 
-1. PKOB4 Debug Com Port over Debug USB Connector 
-2. Kit Protocol HID connection over USB Device Connector
-(required for operation, but not used)
+The board connections are shown below for debug programming
+using the ICE4 connection to the CoreSite 20 connector:
 
 ![PIC32CA CAxx Curiosity Board Setup for HSM Demo](assets/board_setup.png)
 
-
-Currently, the project is programmed only with the ICD 4 
+The project can also be programmed using the ICD 4, 
 using the "Cortex Debug" connector. 
 
 Note that USB power is not used by this board. Power is only
@@ -47,9 +63,9 @@ supplied via the barrel connector.
 
 TOOLS
 ------
-
+ICE4 Toolpacj: 4.1.1239 (both projects)    
 ICD4 Toolpack: 1.9.1283 (both projects)    
-PIC32CZ\_CA90\_DFP: 1.0.18   (Both Cores)    
+PIC32CZ\_CA90\_DFP: 1.3.152 
 
 Running the Project
 -------------------
@@ -108,13 +124,6 @@ flash has not been loaded.
 
 A few tests of each HSM MB API Command function are executed as part
 of this demo.    
-
-#### HSM Demo Implementation
-
-The HSM MB API Library exists under folder hsm_host 
-
-![HSM Mailbox Host Command API Library](assets/hsm_host_mb_api.png)
-
 
 ##### HSM Testing Results
 NOTE:  Not all of these tests pass.

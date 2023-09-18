@@ -6678,12 +6678,12 @@
          <hash>3b7eb50ff1dd3f7290f965cb0550e805da8769e65810f7e4bb32730c6cf16b2f</hash>
       </entry>
       <entry>
-         <file>..\src\config\default\bsp\bsp.c</file>
-         <hash>1b6e7810afeecea4931e8d544d1e9db856cf402b47dd0d8b38d37843c02a5e28</hash>
-      </entry>
-      <entry>
          <file>..\src\config\default\system\system_module.h</file>
          <hash>96c74368801b0a7aaa25aec3ec2cb0d483250385f103ffc1ff64089b4ca2c6d9</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\bsp\bsp.c</file>
+         <hash>1b6e7810afeecea4931e8d544d1e9db856cf402b47dd0d8b38d37843c02a5e28</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CZ8110CA90208_DFP\instance\gclk.h</file>
@@ -6935,7 +6935,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\definitions.h</file>
-         <hash>2e92aa1877cf93e722f244ee8d2b32e2621df341259de9a72d3a3e8d9444a7d9</hash>
+         <hash>fb76b17d3b4b1583adc590438af16cd06246c644e872b842f8c221a8d33c26d6</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CZ8110CA90208_DFP\component\sdmmc.h</file>

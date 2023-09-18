@@ -3,7 +3,9 @@
 
 # MPLAB® Harmony 3 Crypto
 
-MPLAB® Harmony 3 is an extension of the MPLAB® ecosystem for creating embedded firmware solutions for Microchip 32-bit SAM and PIC® microcontroller and microprocessor devices.  Refer to the following links for more information.
+MPLAB® Harmony 3 is an extension of the MPLAB® ecosystem for creating embedded
+firmware solutions for Microchip 32-bit SAM and PIC® microcontroller and
+microprocessor devices.  Refer to the following links for more information.
 
 - [Microchip 32-bit MCUs](https://www.microchip.com/design-centers/32-bit)
 - [Microchip 32-bit MPUs](https://www.microchip.com/design-centers/32-bit-mpus)
@@ -11,7 +13,12 @@ MPLAB® Harmony 3 is an extension of the MPLAB® ecosystem for creating embedded
 - [Microchip MPLAB® Harmony](https://www.microchip.com/mplab/mplab-harmony)
 - [Microchip MPLAB® Harmony Pages](https://microchip-mplab-harmony.github.io/)
 
-This repository contains the MPLAB® Harmony 3 cryptographic solutions and example applications. Quickly incorporate connectivity to your designs with ICs, modules, software and development kits that make connecting effortless for your customers. Our comprehensive cryptographic portfolio has the technology to meet your range, data rate, interoperability, frequency and topology needs. Refer to the following links for release notes, training materials, and interface reference information.
+This repository contains the MPLAB® Harmony 3 cryptographic solutions and example
+applications. Quickly incorporate connectivity to your designs with ICs, modules,
+software and development kits that make connecting effortless for your customers.
+Our comprehensive cryptographic portfolio has the technology to meet your range,
+data rate, interoperability, frequency and topology needs. Refer to the following
+links for release notes, training materials, and interface reference information.
 
 - [Release Notes](./release_notes.md)
 - [MPLAB® Harmony License](Microchip_SLA001.md)
@@ -22,8 +29,6 @@ This repository contains the MPLAB® Harmony 3 cryptographic solutions and examp
 | Folder     | Description                                               |
 | ---        | ---                                                       |
 | apps       | PIC32CZ CA90 HSM Host Test Suite Demonstration apps       |
-| docs       | PIC32CZ CA90 HSM Host Test Suite Demonstration help documentation |
-| test       | PIC32CZ CA90 HSM Host Test Suite Demonstration test output |
 
 
 ____
